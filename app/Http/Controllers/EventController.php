@@ -35,7 +35,7 @@ class EventController extends Controller
         'category_id' => $request->category_id,
         'user_id'     => Session::get('id'),
         'judul'       => $request->judul,
-        'slug'        => \Illuminate\Support\Str::slug($request->judul),
+        'slug'        => $this->generateUniqueSlug($request->judul),
         'deskripsi'   => $request->deskripsi,
         'pembicara'   => $request->pembicara,
         'tanggal'     => $request->tanggal,
@@ -87,7 +87,7 @@ class EventController extends Controller
         DB::table('events')->where('id', $id)->update([
             'category_id' => $request->category_id,
             'judul'       => $request->judul,
-            'slug'        => \Illuminate\Support\Str::slug($request->judul),
+            'slug'        => $this->generateUniqueSlug($request->judul, $id),
             'deskripsi'   => $request->deskripsi,
             'pembicara'   => $request->pembicara,
             'tanggal'     => $request->tanggal,
@@ -115,5 +115,19 @@ class EventController extends Controller
 
         DB::table('events')->where('id', $id)->delete();
         return redirect('/events')->with('success', 'Event berhasil dihapus!');
+    }
+
+    private function generateUniqueSlug($title, $id = 0)
+    {
+        $slug = \Illuminate\Support\Str::slug($title);
+        $originalSlug = $slug;
+        $count = 1;
+
+        while (DB::table('events')->where('slug', $slug)->where('id', '!=', $id)->exists()) {
+            $slug = "{$originalSlug}-{$count}";
+            $count++;
+        }
+
+        return $slug;
     }
 }

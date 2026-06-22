@@ -6,24 +6,24 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333333;
+            color: #1e293b;
             background-color: #ffffff;
             margin: 0;
             padding: 20px;
         }
 
         .ticket-wrapper {
-            border: 2px solid #6366f1;
+            border: 2px solid #0ea5e9;
             border-radius: 12px;
             overflow: hidden;
             width: 100%;
             max-width: 650px;
             margin: 0 auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
         }
 
         .ticket-header {
-            background-color: #6366f1;
+            background: linear-gradient(135deg, #0284c7, #0ea5e9);
             color: #ffffff;
             padding: 15px 20px;
             text-align: center;
@@ -31,21 +31,30 @@
 
         .ticket-header h1 {
             margin: 0;
-            font-size: 24px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        .ticket-header .logo {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 5px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-align: center;
         }
 
         .ticket-header p {
             margin: 5px 0 0 0;
             font-size: 12px;
-            opacity: 0.85;
+            opacity: 0.9;
         }
 
         .ticket-body {
             padding: 20px;
-            background-color: #fafafa;
+            background-color: #ffffff;
         }
 
         .ticket-section {
@@ -55,7 +64,7 @@
         .ticket-section-title {
             font-size: 12px;
             text-transform: uppercase;
-            color: #888888;
+            color: #64748b;
             border-bottom: 1px solid #e2e8f0;
             padding-bottom: 5px;
             margin-bottom: 10px;
@@ -75,27 +84,27 @@
 
         .ticket-info-grid td.label {
             width: 30%;
-            color: #666666;
+            color: #475569;
             font-weight: 500;
         }
 
         .ticket-info-grid td.value {
             width: 70%;
-            color: #111111;
+            color: #0f172a;
             font-weight: 700;
         }
 
         .ticket-footer {
-            border-top: 2px dashed #e2e8f0;
+            border-top: 2px dashed #cbd5e1;
             padding: 20px;
-            background-color: #f8fafc;
+            background-color: #f0f7ff;
             text-align: center;
             position: relative;
         }
 
         .ticket-pass {
             display: inline-block;
-            background-color: #10b981;
+            background-color: #0ea5e9;
             color: #ffffff;
             padding: 8px 16px;
             border-radius: 20px;
@@ -108,14 +117,14 @@
             font-size: 22px;
             font-weight: 900;
             letter-spacing: 2px;
-            color: #6366f1;
+            color: #0284c7;
             margin-top: 5px;
         }
 
         .ticket-barcode-sim {
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
-            color: #888888;
+            color: #94a3b8;
             letter-spacing: 6px;
             margin-top: 15px;
             text-transform: uppercase;
@@ -124,17 +133,24 @@
         .instructions {
             margin-top: 25px;
             font-size: 11px;
-            color: #888888;
+            color: #64748b;
             text-align: center;
             line-height: 1.5;
         }
+
+        .qris-image svg {
+            width: 160px;
+            height: 160px;
+        }   
+        
     </style>
 </head>
 <body>
 
     <div class="ticket-wrapper">
         <div class="ticket-header">
-            <h1>EventPulse E-Ticket</h1>
+            <div class="logo">&#9889; EventPulse</div>
+            <h1>E-Ticket</h1>
             <p>Tunjukkan tiket digital atau cetak ini saat memasuki lokasi acara</p>
         </div>
 
@@ -186,8 +202,15 @@
         <div class="ticket-footer">
             <div class="ticket-pass">NO. ANTRIAN: #{{ $registration->nomor_antrian }}</div>
             <div>Kode Tiket Anda:</div>
-            <div class="ticket-code">{{ $registration->kode_tiket }}</div>
-            <div class="ticket-barcode-sim">||||||| | ||||| | ||| |||||||</div>
+            @if(isset($qrCodeBase64))
+            <div class="qris-section">
+                <div class="qris-label">SCAN UNTUK PEMBAYARAN (QRIS)</div>
+                <div class="qris-image">
+                    <img src="data:image/svg+xml;base64,{{ $qrCodeBase64 }}" width="160" height="160" alt="QR Code" style="margin-top: 10px;">
+                </div>
+                <div class="qris-note">Silahkan melakukan pembayaran dengan memindai QR di atas</div>
+            </div>
+            @endif
         </div>
     </div>
 

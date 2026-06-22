@@ -4,7 +4,7 @@
 <div class="container mt-4 mb-5">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
         <div>
-            <h2 class="mb-1"><i class="bi bi-calendar-event me-2" style="color: #a78bfa;"></i>Kelola Event</h2>
+            <h2 class="mb-1"><i class="bi bi-calendar-event me-2" style="color: #0ea5e9;"></i>Kelola Event</h2>
             <p class="text-muted mb-0">Manajemen daftar event Anda dengan mudah dan cepat.</p>
         </div>
         <div class="d-flex gap-2">
@@ -21,7 +21,7 @@
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0" style="min-width: 800px;">
-                    <thead class="table-dark">
+                    <thead style="background: linear-gradient(135deg, #0284c7, #0ea5e9); color: #fff;">
                         <tr>
                             <th scope="col" class="ps-4 py-3" width="80">Banner</th>
                             <th scope="col" class="py-3">Info Event</th>
@@ -36,20 +36,20 @@
                         <tr>
                             <td class="ps-4 py-3">
                                 @if($event->banner)
-                                    <img src="{{ asset('storage/' . $event->banner) }}" alt="Banner" class="rounded" style="width: 70px; height: 50px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                    <img src="{{ asset('storage/' . $event->banner) }}" alt="Banner" class="rounded" style="width: 70px; height: 50px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
                                 @else
-                                    <div class="rounded d-flex align-items-center justify-content-center" style="width: 70px; height: 50px; background: rgba(255,255,255,0.1);">
-                                        <i class="bi bi-image text-white-50"></i>
+                                    <div class="rounded d-flex align-items-center justify-content-center" style="width: 70px; height: 50px; background: #f0f7ff;">
+                                        <i class="bi bi-image" style="color: #94a3b8;"></i>
                                     </div>
                                 @endif
                             </td>
                             <td class="py-3">
-                                <span class="fw-bold d-block text-dark" style="font-size: 1.05rem;">{{ $event->judul }}</span>
+                                <span class="fw-bold d-block" style="font-size: 1.05rem; color: #0f172a;">{{ $event->judul }}</span>
                                 <small class="text-muted"><i class="bi bi-geo-alt-fill me-1"></i>{{ $event->lokasi }}</small>
                             </td>
                             <td class="py-3">
-                                <div class="d-flex align-items-center text-dark">
-                                    <i class="bi bi-calendar-check me-2 text-primary"></i>
+                                <div class="d-flex align-items-center" style="color: #0f172a;">
+                                    <i class="bi bi-calendar-check me-2" style="color: #0ea5e9;"></i>
                                     <span class="fw-medium">{{ \Carbon\Carbon::parse($event->tanggal)->format('d M Y') }}</span>
                                 </div>
                             </td>
@@ -67,7 +67,7 @@
                                 @endif
                             </td>
                             <td class="py-3">
-                                <span class="badge bg-info bg-opacity-25 text-info border border-info px-2 py-1 rounded">{{ $event->kuota }}</span>
+                                <span class="badge px-2 py-1 rounded" style="background: rgba(14,165,233,0.1); color: #0284c7; border: 1px solid rgba(14,165,233,0.2);">{{ $event->kuota }}</span>
                             </td>
                             <td class="text-end pe-4 py-3">
                                 <div class="d-flex justify-content-end gap-2">

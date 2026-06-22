@@ -22,8 +22,8 @@
         }
 
         body {
-            background-color: #050508;
-            color: #e2e8f0;
+            background-color: #f8fafc;
+            color: #0f172a;
             min-height: 100vh;
             display: flex;
             overflow-x: hidden;
@@ -34,8 +34,8 @@
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background-image:
-                radial-gradient(circle at 10% 20%, rgba(99,102,241,0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(167,139,250,0.1) 0%, transparent 40%);
+                radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -50,8 +50,7 @@
         /* Left Branding Panel */
         .brand-panel {
             flex: 1.2;
-            background: linear-gradient(135deg, #0f0f1c 0%, #07070a 100%);
-            border-right: 1px solid rgba(99,102,241,0.2);
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -65,7 +64,7 @@
             position: absolute;
             top: -20%; right: -20%;
             width: 60%; height: 60%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
             filter: blur(50px);
         }
 
@@ -73,9 +72,9 @@
         .brand-pattern {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.05;
-            background-image: linear-gradient(rgba(99, 102, 241, 0.4) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(99, 102, 241, 0.4) 1px, transparent 1px);
+            opacity: 0.1;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
             background-size: 40px 40px;
             pointer-events: none;
         }
@@ -84,18 +83,16 @@
             font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #a78bfa, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 8px;
             text-decoration: none;
+            z-index: 2;
         }
 
         .brand-logo i {
-            color: #6366f1;
-            -webkit-text-fill-color: initial;
+            color: #facc15;
         }
 
         .brand-middle {
@@ -110,17 +107,16 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            color: #f8fafc;
+            color: #ffffff;
         }
 
         .brand-middle h1 span {
-            background: linear-gradient(135deg, #facc15, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #facc15;
+            text-shadow: 0 2px 10px rgba(250, 204, 21, 0.3);
         }
 
         .brand-middle p {
-            color: #94a3b8;
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 2rem;
@@ -128,46 +124,46 @@
 
         /* Glass Feature Card inside Brand Panel */
         .glass-feature {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 1.5rem;
             display: flex;
             align-items: center;
             gap: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .glass-icon-wrapper {
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: rgba(255, 255, 255, 0.2);
             width: 48px;
             height: 48px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #a78bfa;
+            color: #ffffff;
             font-size: 1.3rem;
         }
 
         .glass-feature-text h6 {
-            color: #f1f5f9;
+            color: #ffffff;
             font-weight: 700;
             margin-bottom: 2px;
         }
 
         .glass-feature-text p {
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.85rem;
             margin-bottom: 0;
         }
 
         .brand-footer {
-            color: #475569;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             font-weight: 500;
+            z-index: 2;
         }
 
         /* Right Form Panel */
@@ -177,33 +173,23 @@
             align-items: center;
             justify-content: center;
             padding: 3rem;
-            background-color: #07070b;
+            background-color: #ffffff;
         }
 
         .login-card {
             width: 100%;
             max-width: 440px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(20px);
+            background: #ffffff;
+            border: 1px solid rgba(14, 165, 233, 0.1);
             border-radius: 24px;
             padding: 2.5rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.08);
             position: relative;
-        }
-
-        .login-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
-            pointer-events: none;
         }
 
         .login-header h2 {
             font-weight: 800;
-            color: #f1f5f9;
+            color: #0f172a;
             margin-bottom: 0.5rem;
         }
 
@@ -215,8 +201,8 @@
 
         /* Role Switcher Tab */
         .role-switcher {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
             padding: 5px;
             border-radius: 14px;
             display: flex;
@@ -229,7 +215,7 @@
             padding: 11px 10px;
             border: none;
             background: transparent;
-            color: #94a3b8;
+            color: #64748b;
             font-weight: 600;
             font-size: 0.88rem;
             border-radius: 10px;
@@ -246,9 +232,9 @@
         }
 
         .role-btn.active {
-            background: linear-gradient(135deg, #6366f1, #7c3aed);
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
         }
 
         /* Form Controls */
@@ -262,7 +248,7 @@
             left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: #475569;
+            color: #94a3b8;
             transition: color 0.3s;
             font-size: 1.1rem;
         }
@@ -270,28 +256,28 @@
         .input-group-custom input {
             width: 100%;
             padding: 14px 16px 14px 48px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            color: #f1f5f9;
+            color: #0f172a;
             font-size: 0.95rem;
             transition: all 0.3s;
         }
 
         .input-group-custom input:focus {
             outline: none;
-            background: rgba(255, 255, 255, 0.06);
-            border-color: #6366f1;
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            background: #ffffff;
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
         }
 
         .input-group-custom input:focus + i {
-            color: #a78bfa;
+            color: #0ea5e9;
         }
 
         .input-label {
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: #475569;
             font-weight: 600;
             margin-bottom: 6px;
             display: block;
@@ -301,27 +287,27 @@
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            background: linear-gradient(135deg, #0ea5e9, #38bdf8);
             border: none;
             color: #fff;
             font-weight: 700;
             border-radius: 12px;
             transition: all 0.3s;
             margin-top: 1rem;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
         }
 
         .btn-submit:hover {
-            background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+            background: linear-gradient(135deg, #0284c7, #0ea5e9);
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.45);
+            box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
         }
 
         .divider {
             display: flex;
             align-items: center;
             text-align: center;
-            color: #475569;
+            color: #94a3b8;
             font-size: 0.8rem;
             font-weight: 600;
             margin: 1.5rem 0;
@@ -330,7 +316,7 @@
         .divider::before, .divider::after {
             content: '';
             flex: 1;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .divider:not(:empty)::before { margin-right: .5em; }
@@ -339,10 +325,10 @@
         .btn-google {
             width: 100%;
             padding: 13px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            color: #e2e8f0;
+            color: #475569;
             font-weight: 600;
             font-size: 0.95rem;
             display: flex;
@@ -353,8 +339,8 @@
         }
 
         .btn-google:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.15);
+            background: #f8fafc;
+            border-color: #cbd5e1;
             transform: translateY(-1px);
         }
 
@@ -371,14 +357,14 @@
         }
 
         .form-footer-links a {
-            color: #a78bfa;
+            color: #0ea5e9;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
         }
 
         .form-footer-links a:hover {
-            color: #818cf8;
+            color: #0284c7;
             text-decoration: underline;
         }
 
@@ -394,7 +380,7 @@
         }
 
         .btn-back-home:hover {
-            color: #e2e8f0 !important;
+            color: #0f172a !important;
         }
 
         /* Responsive Layout */
@@ -560,9 +546,9 @@
                 icon: 'info',
                 title: 'Simulasi Login Google',
                 text: 'Fitur login Google terintegrasi sedang disimulasikan.',
-                confirmButtonColor: '#6366f1',
-                background: '#1e1e2e',
-                color: '#e2e8f0',
+                confirmButtonColor: '#0ea5e9',
+                background: '#ffffff',
+                color: '#0f172a',
             });
         }
     </script>
@@ -574,9 +560,9 @@
             icon: 'error',
             title: 'Gagal Masuk!',
             text: "{{ session('error') }}",
-            confirmButtonColor: '#6366f1',
-            background: '#1e1e2e',
-            color: '#e2e8f0',
+            confirmButtonColor: '#0ea5e9',
+            background: '#ffffff',
+            color: '#0f172a',
         });
     </script>
     @endif
@@ -587,11 +573,11 @@
             icon: 'success',
             title: 'Berhasil!',
             text: "{{ session('success') }}",
-            confirmButtonColor: '#6366f1',
+            confirmButtonColor: '#0ea5e9',
             timer: 3000,
             timerProgressBar: true,
-            background: '#1e1e2e',
-            color: '#e2e8f0',
+            background: '#ffffff',
+            color: '#0f172a',
         });
     </script>
     @endif

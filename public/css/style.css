@@ -5,9 +5,9 @@
 .hero-section{
     background: linear-gradient(
         135deg,
-        #4f46e5 0%,
-        #7c3aed 50%,
-        #9333ea 100%
+        #0369a1 0%,
+        #0ea5e9 50%,
+        #38bdf8 100%
     );
     min-height: 500px;
     display: flex;
@@ -16,13 +16,14 @@
 
 .hero-badge{
     display:inline-block;
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.2);
     color:#fff;
     padding:8px 18px;
     border-radius:50px;
     font-size:.9rem;
     font-weight:600;
     backdrop-filter:blur(10px);
+    border: 1px solid rgba(255,255,255,.4);
 }
 
 .hero-title{
@@ -33,17 +34,19 @@
 
 .hero-highlight{
     color:#facc15;
+    text-shadow: 0 2px 10px rgba(250, 204, 21, 0.4);
 }
 
 .hero-subtitle{
     max-width:700px;
     margin:auto;
-    color:rgba(255,255,255,.85);
+    color:rgba(255,255,255,.9);
 }
 
 .hero-stat{
     background:rgba(255,255,255,.15);
     backdrop-filter:blur(12px);
+    border: 1px solid rgba(255,255,255,.25);
     border-radius:16px;
     padding:18px 28px;
     min-width:150px;
@@ -51,7 +54,7 @@
 
 .hero-stat-label{
     font-size:.9rem;
-    color:rgba(255,255,255,.8);
+    color:rgba(255,255,255,.9);
 }
 
 /* ==========================
@@ -59,23 +62,25 @@
 ========================== */
 
 body{
-    background:#f8fafc;
+    background:#f0f7ff;
 }
 
 .event-card{
-    border:none;
+    border: 1px solid rgba(14, 165, 233, 0.1) !important;
     border-radius:20px;
     overflow:hidden;
     height:100%;
     display:flex;
     flex-direction:column;
-    background:#fff;
+    background:#ffffff !important;
     transition:.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
 }
 
 .event-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    box-shadow:0 20px 40px rgba(14,165,233,.15) !important;
+    border-color: rgba(14,165,233,.3) !important;
 }
 
 .event-banner{
@@ -115,8 +120,8 @@ body{
 
 .event-date-badge{
     display:inline-block;
-    background:#ede9fe;
-    color:#6d28d9;
+    background:rgba(14, 165, 233, 0.1);
+    color:#0284c7;
     padding:8px 14px;
     border-radius:10px;
     font-size:.85rem;
@@ -127,7 +132,7 @@ body{
     margin-top:15px;
     font-size:1.2rem;
     font-weight:700;
-    color:#111827;
+    color:#0f172a;
     min-height:60px;
 }
 
@@ -136,15 +141,15 @@ body{
 }
 
 .event-info p{
-    color:#6b7280;
+    color:#64748b;
     margin-bottom:10px;
     font-size:.95rem;
 }
 
 .card-footer{
     padding:22px;
-    background:#fff;
-    border:none;
+    background:transparent;
+    border-top: 1px solid #e2e8f0;
     margin-top:auto;
 }
 
@@ -155,8 +160,8 @@ body{
     text-decoration:none;
     background:linear-gradient(
         135deg,
-        #4f46e5,
-        #7c3aed
+        #0ea5e9,
+        #38bdf8
     );
     color:white !important;
     border-radius:12px;
@@ -167,7 +172,9 @@ body{
 
 .event-btn:hover{
     color:white !important;
+    background:linear-gradient(135deg, #0284c7, #0ea5e9);
     transform:translateY(-2px);
+    box-shadow: 0 8px 20px rgba(14,165,233,.3);
 }
 
 /* ==========================

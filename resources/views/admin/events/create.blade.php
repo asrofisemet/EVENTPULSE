@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="mb-0"><i class="bi bi-plus-circle-fill me-2" style="color: #a78bfa;"></i>Tambah Event</h2>
+                <h2 class="mb-0"><i class="bi bi-plus-circle-fill me-2" style="color: #0ea5e9;"></i>Tambah Event</h2>
                 <a href="/events" class="btn btn-outline-secondary" style="border-radius: 10px;">
                     <i class="bi bi-arrow-left"></i> Kembali
                 </a>
@@ -18,7 +18,7 @@
                         
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3 mb-md-0">
-                                <label class="form-label"><i class="bi bi-tags-fill me-1 text-primary"></i> Kategori</label>
+                                <label class="form-label"><i class="bi bi-tags-fill me-1" style="color: #0ea5e9;"></i> Kategori</label>
                                 <select name="category_id" class="form-select form-select-lg" required style="border-radius: 12px;">
                                     <option value="" selected disabled>-- Pilih Kategori --</option>
                                     @foreach($categories as $cat)
@@ -27,72 +27,72 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label"><i class="bi bi-type me-1 text-primary"></i> Judul Event</label>
+                                <label class="form-label"><i class="bi bi-type me-1" style="color: #0ea5e9;"></i> Judul Event</label>
                                 <input type="text" name="judul" class="form-control form-control-lg" placeholder="Contoh: Seminar Teknologi Masa Depan" required style="border-radius: 12px;">
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label"><i class="bi bi-file-text-fill me-1 text-primary"></i> Deskripsi</label>
+                            <label class="form-label"><i class="bi bi-file-text-fill me-1" style="color: #0ea5e9;"></i> Deskripsi</label>
                             <textarea name="deskripsi" class="form-control" rows="5" placeholder="Tuliskan deskripsi lengkap mengenai event ini..." required style="border-radius: 12px; resize: none;"></textarea>
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label"><i class="bi bi-person-video3 me-1 text-primary"></i> Pembicara <span class="text-muted fs-6">(Opsional)</span></label>
+                            <label class="form-label"><i class="bi bi-person-video3 me-1" style="color: #0ea5e9;"></i> Pembicara <span class="text-muted fs-6">(Opsional)</span></label>
                             <input type="text" name="pembicara" class="form-control form-control-lg" placeholder="Nama pembicara atau narasumber" style="border-radius: 12px;">
                         </div>
 
                         <div class="row mb-4">
                             <div class="col-md-4 mb-3 mb-md-0">
-                                <label class="form-label"><i class="bi bi-calendar-date-fill me-1 text-primary"></i> Tanggal</label>
+                                <label class="form-label"><i class="bi bi-calendar-date-fill me-1" style="color: #0ea5e9;"></i> Tanggal</label>
                                 <input type="date" name="tanggal" class="form-control form-control-lg" required style="border-radius: 12px;">
                             </div>
                             <div class="col-md-4 mb-3 mb-md-0">
-                                <label class="form-label"><i class="bi bi-clock-fill me-1 text-primary"></i> Jam Mulai</label>
+                                <label class="form-label"><i class="bi bi-clock-fill me-1" style="color: #0ea5e9;"></i> Jam Mulai</label>
                                 <input type="time" name="jam_mulai" class="form-control form-control-lg" required style="border-radius: 12px;">
                             </div>
                             <div class="col-md-4">
-                                <label class="form-label"><i class="bi bi-clock me-1 text-primary"></i> Jam Selesai <span class="text-muted fs-6">(Opsional)</span></label>
+                                <label class="form-label"><i class="bi bi-clock me-1" style="color: #0ea5e9;"></i> Jam Selesai <span class="text-muted fs-6">(Opsional)</span></label>
                                 <input type="time" name="jam_selesai" class="form-control form-control-lg" style="border-radius: 12px;">
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label"><i class="bi bi-geo-alt-fill me-1 text-primary"></i> Lokasi</label>
+                            <label class="form-label"><i class="bi bi-geo-alt-fill me-1" style="color: #0ea5e9;"></i> Lokasi</label>
                             <input type="text" name="lokasi" class="form-control form-control-lg" placeholder="Contoh: Aula Utama Kampus A / Link Zoom" required style="border-radius: 12px;">
                         </div>
 
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3 mb-md-0">
-                                <label class="form-label"><i class="bi bi-people-fill me-1 text-primary"></i> Kuota</label>
+                                <label class="form-label"><i class="bi bi-people-fill me-1" style="color: #0ea5e9;"></i> Kuota</label>
                                 <input type="number" name="kuota" class="form-control form-control-lg" value="100" min="1" required style="border-radius: 12px;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label"><i class="bi bi-cash-coin me-1 text-primary"></i> Harga (0 = Gratis)</label>
+                                <label class="form-label"><i class="bi bi-cash-coin me-1" style="color: #0ea5e9;"></i> Harga (0 = Gratis)</label>
                                 <div class="input-group input-group-lg" style="border-radius: 12px; overflow: hidden;">
-                                    <span class="input-group-text border-0" style="background: rgba(255,255,255,0.1); color: #e2e8f0;">Rp</span>
-                                    <input type="number" name="harga" class="form-control border-0" value="0" min="0" style="background: rgba(255,255,255,0.06);">
+                                    <span class="input-group-text border-0" style="background: #f0f7ff; color: #475569;">Rp</span>
+                                    <input type="number" name="harga" class="form-control border-0" value="0" min="0" style="background: #f8fafc;">
                                 </div>
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label"><i class="bi bi-image-fill me-1 text-primary"></i> Banner / Poster Event <span class="text-muted fs-6">(Opsional)</span></label>
-                            <div class="p-4 rounded text-center mb-2" style="background: rgba(255,255,255,0.03); border: 2px dashed rgba(255,255,255,0.15); border-radius: 12px;">
-                                <i class="bi bi-cloud-arrow-up-fill fs-1 text-muted mb-2 d-block"></i>
+                            <label class="form-label"><i class="bi bi-image-fill me-1" style="color: #0ea5e9;"></i> Banner / Poster Event <span class="text-muted fs-6">(Opsional)</span></label>
+                            <div class="p-4 rounded text-center mb-2" style="background: #f8fafc; border: 2px dashed rgba(14,165,233,0.3); border-radius: 12px;">
+                                <i class="bi bi-cloud-arrow-up-fill fs-1 mb-2 d-block" style="color: #0ea5e9;"></i>
                                 <span class="text-muted d-block mb-3">Unggah gambar banner event</span>
                                 <input type="file" name="banner" class="form-control mx-auto" accept="image/*" onchange="previewBanner(event)" style="border-radius: 10px; max-width: 350px;">
                             </div>
                             <div id="banner-preview" class="mt-3 text-center" style="display:none;">
-                                <p class="text-warning small mb-2"><i class="bi bi-eye-fill me-1"></i>Preview banner:</p>
-                                <img id="preview-img" src="" alt="Preview" class="shadow-sm" style="max-height:200px; border-radius:12px; object-fit:cover; width:100%; max-width: 400px; border: 2px solid rgba(255,255,255,0.2);">
+                                <p class="small mb-2" style="color: #0ea5e9;"><i class="bi bi-eye-fill me-1"></i>Preview banner:</p>
+                                <img id="preview-img" src="" alt="Preview" class="shadow-sm" style="max-height:200px; border-radius:12px; object-fit:cover; width:100%; max-width: 400px; border: 2px solid #e2e8f0;">
                             </div>
                         </div>
 
-                        <div class="mb-5 bg-dark bg-opacity-25 p-3 rounded" style="border-left: 4px solid #a78bfa;">
+                        <div class="mb-5 p-3 rounded" style="background: #f0f7ff; border-left: 4px solid #0ea5e9;">
                             <div class="form-check form-switch d-flex align-items-center gap-2">
                                 <input class="form-check-input" type="checkbox" role="switch" name="is_featured" value="1" id="isFeatured" style="transform: scale(1.3); cursor: pointer;">
-                                <label class="form-check-label text-light ms-2" for="isFeatured" style="cursor: pointer; padding-top: 3px;">
+                                <label class="form-check-label ms-2" for="isFeatured" style="cursor: pointer; padding-top: 3px; color: #1e293b;">
                                     Tampilkan sebagai <strong>Event Unggulan</strong> di Beranda
                                 </label>
                             </div>

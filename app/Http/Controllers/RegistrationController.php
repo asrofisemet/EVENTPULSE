@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Barryvdh\DomPDF\Facade\Pdf;
+use BaconQrCode\Renderer\ImageRenderer;
+use BaconQrCode\Renderer\Image\SvgImageBackEnd;
+use BaconQrCode\Renderer\RendererStyle\RendererStyle;
+use BaconQrCode\Writer;
 
 class RegistrationController extends Controller
 {
@@ -117,7 +121,18 @@ class RegistrationController extends Controller
             abort(404, 'Tiket tidak ditemukan atau Anda tidak memiliki akses.');
         }
 
-        $pdf = Pdf::loadView('ticket.pdf', compact('registration'));
+        // Generate dummy QRIS string for the ticket
+        $qrisDummyString = "QRIS-DEMO-" . $registration->kode_tiket;
+        
+        $renderer = new ImageRenderer(
+            new RendererStyle(160),
+            new SvgImageBackEnd()
+        );
+        $writer = new Writer($renderer);
+        $qrCodeSvg = $writer->writeString($qrisDummyString);
+        $qrCodeBase64 = base64_encode($qrCodeSvg);
+
+        $pdf = Pdf::loadView('ticket.pdf', compact('registration', 'qrCodeBase64'));
         return $pdf->download('tiket-' . $registration->kode_tiket . '.pdf');
     }
 }

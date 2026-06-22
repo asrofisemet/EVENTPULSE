@@ -22,8 +22,8 @@
         }
 
         body {
-            background-color: #050508;
-            color: #e2e8f0;
+            background-color: #f0f7ff;
+            color: #1e293b;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -31,13 +31,12 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Glows */
         .glow-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background-image:
-                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -50,12 +49,12 @@
         }
 
         .login-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(14, 165, 233, 0.12);
             backdrop-filter: blur(20px);
             border-radius: 24px;
             padding: 3rem 2.5rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -65,7 +64,7 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             border-radius: 24px;
-            background: linear-gradient(135deg, rgba(167, 139, 250, 0.05), transparent);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.04), transparent);
             pointer-events: none;
         }
 
@@ -73,7 +72,7 @@
             font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #c084fc, #818cf8);
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: flex;
@@ -85,13 +84,13 @@
         }
 
         .brand-logo i {
-            color: #818cf8;
+            color: #0ea5e9;
             -webkit-text-fill-color: initial;
         }
 
         .login-header h2 {
             font-weight: 800;
-            color: #f1f5f9;
+            color: #0f172a;
             margin-bottom: 0.5rem;
             text-align: center;
         }
@@ -103,7 +102,6 @@
             text-align: center;
         }
 
-        /* Form Controls */
         .input-group-custom {
             position: relative;
             margin-bottom: 1.5rem;
@@ -114,7 +112,7 @@
             left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: #475569;
+            color: #94a3b8;
             transition: color 0.3s;
             font-size: 1.1rem;
         }
@@ -122,51 +120,50 @@
         .input-group-custom input {
             width: 100%;
             padding: 14px 16px 14px 48px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            color: #f1f5f9;
+            color: #1e293b;
             font-size: 0.95rem;
             transition: all 0.3s;
         }
 
         .input-group-custom input:focus {
             outline: none;
-            background: rgba(255, 255, 255, 0.06);
-            border-color: #a78bfa;
-            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+            background: #ffffff;
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
         }
 
         .input-group-custom input:focus + i {
-            color: #c084fc;
+            color: #0ea5e9;
         }
 
         .input-label {
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: #475569;
             font-weight: 600;
             margin-bottom: 6px;
             display: block;
         }
 
-        /* Buttons & Actions */
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            background: linear-gradient(135deg, #0284c7, #0ea5e9);
             border: none;
             color: #fff;
             font-weight: 700;
             border-radius: 12px;
             transition: all 0.3s;
             margin-top: 1rem;
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
         }
 
         .btn-submit:hover {
-            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            background: linear-gradient(135deg, #0369a1, #0284c7);
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.45);
+            box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
         }
 
         .form-footer-links {
@@ -177,14 +174,14 @@
         }
 
         .form-footer-links a {
-            color: #a78bfa;
+            color: #0ea5e9;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
         }
 
         .form-footer-links a:hover {
-            color: #818cf8;
+            color: #0284c7;
             text-decoration: underline;
         }
 
@@ -200,7 +197,7 @@
         }
 
         .btn-back-home:hover {
-            color: #e2e8f0 !important;
+            color: #0ea5e9 !important;
         }
     </style>
 </head>
@@ -220,7 +217,6 @@
                 <p>Masuk sebagai Administrator EventPulse</p>
             </div>
 
-            <!-- Login Form -->
             <form action="/admin/login" method="POST">
                 @csrf
                 
@@ -245,7 +241,6 @@
                 </button>
             </form>
 
-            <!-- Footer Links -->
             <div class="form-footer-links">
                 <div>
                     Bukan Admin? <a href="/login">Kembali ke Login Biasa</a>
@@ -265,9 +260,9 @@
             icon: 'error',
             title: 'Gagal Masuk!',
             text: "{{ session('error') }}",
-            confirmButtonColor: '#8b5cf6',
-            background: '#1e1e2e',
-            color: '#e2e8f0',
+            confirmButtonColor: '#0ea5e9',
+            background: '#ffffff',
+            color: '#1e293b',
         });
     </script>
     @endif
@@ -278,11 +273,11 @@
             icon: 'success',
             title: 'Berhasil!',
             text: "{{ session('success') }}",
-            confirmButtonColor: '#8b5cf6',
+            confirmButtonColor: '#0ea5e9',
             timer: 3000,
             timerProgressBar: true,
-            background: '#1e1e2e',
-            color: '#e2e8f0',
+            background: '#ffffff',
+            color: '#1e293b',
         });
     </script>
     @endif

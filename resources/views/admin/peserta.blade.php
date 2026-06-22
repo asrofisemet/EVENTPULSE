@@ -2,57 +2,71 @@
 
 @section('content')
 <div class="container mt-4">
-    <h2>Daftar Peserta</h2>
-    <a href="{{ session('role') === 'admin' ? '/admin/dashboard' : '/penyelenggara/dashboard' }}" class="btn btn-secondary mb-3">← Kembali</a>
+    <h2><i class="bi bi-people-fill me-2" style="color: #0ea5e9;"></i>Daftar Peserta</h2>
+    <a href="{{ session('role') === 'admin' ? '/admin/dashboard' : '/penyelenggara/dashboard' }}" class="btn btn-outline-secondary mb-3" style="border-radius: 10px;">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
     <style>
-        /* Custom Dark Theme Styles for DataTables */
+        /* Custom Light Theme Styles for DataTables */
         .dataTables_wrapper .dataTables_length select,
         .dataTables_wrapper .dataTables_filter input {
-            background-color: rgba(255, 255, 255, 0.06) !important;
-            border: 1px solid rgba(255, 255, 255, 0.12) !important;
-            color: #e2e8f0 !important;
+            background-color: #ffffff !important;
+            border: 1px solid #cbd5e1 !important;
+            color: #1e293b !important;
             border-radius: 8px !important;
             padding: 6px 12px !important;
         }
         .dataTables_wrapper .dataTables_info {
-            color: #94a3b8 !important;
+            color: #64748b !important;
             margin-top: 15px !important;
         }
         .dataTables_wrapper .dataTables_paginate {
             margin-top: 15px !important;
         }
         .dataTables_wrapper .paginate_button.page-item .page-link {
-            background-color: rgba(255, 255, 255, 0.04) !important;
-            border-color: rgba(255, 255, 255, 0.08) !important;
-            color: #94a3b8 !important;
+            background-color: #ffffff !important;
+            border-color: #e2e8f0 !important;
+            color: #64748b !important;
             border-radius: 6px !important;
             margin: 0 2px !important;
             transition: all 0.2s !important;
         }
         .dataTables_wrapper .paginate_button.page-item.active .page-link {
-            background: linear-gradient(135deg, #6366f1, #a78bfa) !important;
+            background: linear-gradient(135deg, #0284c7, #0ea5e9) !important;
             border-color: transparent !important;
             color: white !important;
-            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2) !important;
+            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2) !important;
         }
         .dataTables_wrapper .paginate_button.page-item .page-link:hover {
-            background-color: rgba(99, 102, 241, 0.15) !important;
-            color: #e2e8f0 !important;
+            background-color: #f0f7ff !important;
+            color: #0ea5e9 !important;
         }
         .table-responsive {
-            border: 1px solid rgba(255,255,255,0.08) !important;
+            border: 1px solid #e2e8f0 !important;
             border-radius: 12px !important;
             padding: 15px !important;
-            background: rgba(255, 255, 255, 0.01) !important;
-            backdrop-filter: blur(10px) !important;
+            background: #ffffff !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+        }
+        table.dataTable thead th {
+            border-bottom: 2px solid #0ea5e9 !important;
+            background-color: #f8fafc !important;
+            color: #0f172a !important;
+        }
+        table.dataTable tbody td {
+            border-bottom: 1px solid #e2e8f0 !important;
+            color: #1e293b !important;
+        }
+        table.dataTable tbody tr:hover td {
+            background-color: #f0f7ff !important;
         }
     </style>
 
     <div class="table-responsive mt-3">
-        <table id="pesertaTable" class="table table-bordered table-hover">
-            <thead class="table-dark">
+        <table id="pesertaTable" class="table table-hover">
+            <thead>
                 <tr>
                     <th>Nama</th>
                     <th>Email</th>
@@ -65,12 +79,18 @@
             <tbody>
                 @foreach($peserta as $p)
                 <tr>
-                    <td>{{ $p->name }}</td>
-                    <td>{{ $p->email }}</td>
+                    <td class="fw-medium">{{ $p->name }}</td>
+                    <td class="text-muted">{{ $p->email }}</td>
                     <td>{{ $p->judul }}</td>
-                    <td>{{ $p->kode_tiket }}</td>
-                    <td>{{ $p->nomor_antrian }}</td>
-                    <td>{{ $p->status }}</td>
+                    <td><span class="badge" style="background: rgba(14,165,233,0.1); color: #0284c7; border: 1px solid rgba(14,165,233,0.2);">{{ $p->kode_tiket }}</span></td>
+                    <td><span class="badge" style="background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2);">#{{ $p->nomor_antrian }}</span></td>
+                    <td>
+                        @if($p->status == 'registered')
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success px-2 py-1">Registered</span>
+                        @else
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary px-2 py-1">{{ $p->status }}</span>
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
