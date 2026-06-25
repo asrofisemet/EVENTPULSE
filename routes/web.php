@@ -16,6 +16,9 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'storeRegister']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
+// Google Login Routes
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 // Mahasiswa routes (harus login)
 Route::middleware(['auth.login'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);

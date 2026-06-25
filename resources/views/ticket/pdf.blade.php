@@ -149,7 +149,9 @@
 
     <div class="ticket-wrapper">
         <div class="ticket-header">
-            <div class="logo">&#9889; EventPulse</div>
+            <div class="logo">
+                <img src="{{ public_path('images/logo-ep.png') }}" alt="EventPulse Logo" style="height: 35px; width: auto; margin-bottom: 8px;">
+            </div>
             <h1>E-Ticket</h1>
             <p>Tunjukkan tiket digital atau cetak ini saat memasuki lokasi acara</p>
         </div>

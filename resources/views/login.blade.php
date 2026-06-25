@@ -481,7 +481,7 @@
                 <!-- Google Sign In Simulation -->
                 <div class="divider">atau masuk dengan</div>
 
-                <button class="btn-google" onclick="simulateGoogleLogin()">
+                <a href="/auth/google" class="btn-google" style="text-decoration: none;">
                     <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                         <g transform="matrix(1, 0, 0, 1, 0, 0)">
                             <path d="M21.35,11.1H12v2.7h5.38c-0.24,1.28 -0.96,2.37 -2.04,3.1v2.58h3.3c1.93,-1.78 3.04,-4.4 3.04,-7.48C21.68,11.83 21.56,11.43 21.35,11.1z" fill="#4285F4" />
@@ -491,7 +491,7 @@
                         </g>
                     </svg>
                     Google
-                </button>
+                </a>
 
                 <!-- Footer Links -->
                 <div class="form-footer-links">
@@ -539,17 +539,6 @@
                 registerLinkContainer.style.display = 'none';
                 emailInput.placeholder = 'penyelenggara@email.com';
             }
-        }
-
-        function simulateGoogleLogin() {
-            Swal.fire({
-                icon: 'info',
-                title: 'Simulasi Login Google',
-                text: 'Fitur login Google terintegrasi sedang disimulasikan.',
-                confirmButtonColor: '#0ea5e9',
-                background: '#ffffff',
-                color: '#0f172a',
-            });
         }
     </script>
 
