@@ -109,10 +109,216 @@
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
+        /* ==========================================
+           GAYA FOOTER UTAMA
+           ========================================== */
         footer {
-            background: #f8fafc;
-            border-top: 1px solid rgba(14, 165, 233, 0.2);
+            background: #ffffff !important;
+            border-top: 1px solid rgba(14, 165, 233, 0.15) !important;
+            color: #64748b !important;
+            padding-top: 4rem !important;
+            padding-bottom: 2rem !important;
+            box-shadow: 0 -15px 40px rgba(14, 165, 233, 0.05) !important;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Salinan Gaya Logo Utama */
+        .footer-brand {
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-brand:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Judul Kolom Footer */
+        .footer-title {
+            color: #0f172a !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 3px;
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            border-radius: 2px;
+        }
+
+        /* Tombol Navigasi Cepat */
+        .footer-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            background: rgba(14, 165, 233, 0.04);
+            border: 1px solid rgba(14, 165, 233, 0.08);
+            color: #64748b !important;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .footer-nav-btn:hover {
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            color: #ffffff !important;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(14, 165, 233, 0.2);
+        }
+
+        .footer-nav-btn i {
+            color: #0ea5e9;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-nav-btn:hover i {
+            color: #ffffff !important;
+            transform: scale(1.15);
+        }
+
+        /* Kontak Item */
+        .footer-contact-item {
+            color: #64748b !important;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.75rem;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(14, 165, 233, 0.03);
+            border: 1px solid rgba(14, 165, 233, 0.08);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-contact-item.address {
+            align-items: flex-start;
+        }
+
+        .footer-contact-item i {
+            color: #0ea5e9;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-contact-item:hover {
+            color: #0284c7 !important;
+            background: rgba(14, 165, 233, 0.08);
+            border-color: rgba(14, 165, 233, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(14, 165, 233, 0.08);
+        }
+        
+        .footer-contact-item:hover i {
+            transform: scale(1.15);
+            color: #0284c7;
+        }
+
+        /* Barisan Ikon Sosial Media */
+        .social-icons-wrapper {
+            display: flex;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+        
+        /* Tombol Sosial Media */
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #ffffff;
             color: #64748b;
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            font-size: 1.25rem;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        /* Efek Hover Sosial Media */
+        .social-btn:hover {
+            color: #ffffff !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.25), 0 4px 6px -2px rgba(14, 165, 233, 0.15);
+            border-color: transparent;
+        }
+        
+        .social-btn.whatsapp:hover {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        .social-btn.instagram:hover {
+            background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040);
+        }
+        
+        .social-btn.github:hover {
+            background: linear-gradient(135deg, #24292e, #0f1419);
+        }
+        
+        .social-btn.email:hover {
+            background: linear-gradient(135deg, #EA4335, #C5221F);
+        }
+        
+        .social-btn.location:hover {
+            background: linear-gradient(135deg, #4285F4, #34A853);
+        }
+
+        /* Garis Pembatas */
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(14, 165, 233, 0.05), rgba(14, 165, 233, 0.2), rgba(14, 165, 233, 0.05));
+            margin: 2rem 0 1.5rem 0;
+            border: none;
+            opacity: 1;
+        }
+
+        /* Bagian Bawah Footer */
+        .footer-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
         }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f0f7ff; }
@@ -169,13 +375,113 @@
 
     @yield('modals')
 
-    <footer class="py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">
-                <i class="bi bi-lightning-charge-fill" style="color: #0ea5e9;"></i>
-                <strong style="color: #0284c7;">EventPulse</strong>
-                <span style="color: #64748b;"> &copy; 2026 — Platform Event Kampus</span>
-            </p>
+    <!-- BAGIAN FOOTER UTAMA -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Kolom Informasi Brand -->
+                <div class="col-lg-4 col-md-12">
+                    <a class="footer-brand mb-3" href="/">
+                        <i class="bi bi-lightning-charge-fill" style="color: #0ea5e9;"></i> EventPulse
+                    </a>
+                    <p class="mt-2 text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                        Platform ekosistem booking event modern untuk seminar, konser, workshop, dan berbagai acara akademik maupun hiburan di Universitas Mataram.
+                    </p>
+                    
+                    <!-- Media Sosial Dan Kontak -->
+                    <div class="social-icons-wrapper">
+                        <!-- Link WhatsApp -->
+                        <a href="https://wa.me/6281915961305" target="_blank" class="social-btn whatsapp" title="Hubungi kami melalui WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <!-- Link Instagram -->
+                        <a href="https://instagram.com/avaro.zu" target="_blank" class="social-btn instagram" title="Kunjungi Instagram kami">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <!-- Link GitHub -->
+                        <a href="https://github.com/avarozufaru" target="_blank" class="social-btn github" title="Kunjungi GitHub kami">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <!-- Link Email -->
+                        <a href="mailto:f1d02410059@student.unram.ac.id" class="social-btn email" title="Kirim email kepada kami">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                        <!-- Link Google Maps -->
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universitas+Mataram+Jl.+Majapahit+No.62+Gomong+Kec.+Selaparang+Kota+Mataram+Nusa+Tenggara+Bar.+83115" target="_blank" class="social-btn location" title="Lihat lokasi kami di Google Maps">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Navigasi Cepat -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-title">Navigasi Cepat</h5>
+                    <div class="mt-3">
+                        <!-- Halaman Beranda -->
+                        @if(session('role') === 'admin')
+                            <a href="/admin/home" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
+                        @elseif(session('role') === 'penyelenggara')
+                            <a href="/penyelenggara/home" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
+                        @else
+                            <a href="/" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
+                        @endif
+                        
+                        <!-- Panel Pengguna -->
+                        @if(session('id'))
+                            @if(session('role') === 'admin')
+                                <a href="/admin/dashboard" class="footer-nav-btn"><i class="bi bi-speedometer2"></i> Admin Dashboard</a>
+                            @elseif(session('role') === 'penyelenggara')
+                                <a href="/penyelenggara/dashboard" class="footer-nav-btn"><i class="bi bi-grid-1x2-fill"></i> Panel Penyelenggara</a>
+                            @else
+                                <a href="/dashboard" class="footer-nav-btn"><i class="bi bi-person-fill-gear"></i> Dashboard Saya</a>
+                            @endif
+                            <a href="/events" class="footer-nav-btn"><i class="bi bi-calendar2-event-fill"></i> Kelola Event</a>
+                        @else
+                            <a href="/login" class="footer-nav-btn"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
+                            <a href="/register" class="footer-nav-btn"><i class="bi bi-person-plus-fill"></i> Daftar Akun</a>
+                        @endif
+                    </div>
+                </div>
+
+                <!-- Kolom Kontak Kami -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-title">Kontak Kami</h5>
+                    
+                    <!-- Informasi Alamat -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Universitas+Mataram+Jl.+Majapahit+No.62+Gomong+Kec.+Selaparang+Kota+Mataram+Nusa+Tenggara+Bar.+83115" target="_blank" class="footer-contact-item address">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>
+                            <strong>Universitas Mataram</strong><br>
+                            <small class="text-muted" style="font-size: 0.85rem;">Jl. Majapahit No.62, Gomong, Selaparang, Mataram</small>
+                        </span>
+                    </a>
+                    
+                    <!-- Informasi Email -->
+                    <a href="mailto:f1d02410059@student.unram.ac.id" class="footer-contact-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>E-mail</span>
+                    </a>
+
+                    <!-- Informasi WhatsApp -->
+                    <a href="https://wa.me/6281915961305" target="_blank" class="footer-contact-item">
+                        <i class="bi bi-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Garis Pembatas -->
+            <hr class="footer-divider">
+
+            <!-- Hak Cipta Dan Kredit Kelompok -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 <strong>EVENTPULSE</strong>. Hak Cipta Dilindungi.
+                </div>
+                <div class="footer-credits">
+                    Dikembangkan untuk Tugas Akhir oleh <strong>Kelompok 4</strong> &bull; Teknik Informatika, Universitas Mataram
+                </div>
+            </div>
         </div>
     </footer>
 
