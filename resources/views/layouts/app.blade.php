@@ -308,10 +308,38 @@
             align-items: center;
             font-size: 0.85rem;
             color: #64748b;
+            gap: 16px;
+            flex-wrap: wrap;
         }
         
         .footer-credits {
             text-align: right;
+        }
+
+        /* Navigasi di baris bawah */
+        .footer-nav-bottom {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav-bottom a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-nav-bottom a:hover {
+            color: #0ea5e9;
+        }
+
+        .footer-nav-bottom .sep {
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            user-select: none;
         }
         
         @media (max-width: 768px) {
@@ -322,6 +350,9 @@
             }
             .footer-credits {
                 text-align: center;
+            }
+            .footer-nav-bottom {
+                justify-content: center;
             }
         }
         ::-webkit-scrollbar { width: 8px; }
@@ -384,7 +415,7 @@
         <div class="container">
             <div class="row g-4">
                 <!-- Kolom Informasi Brand -->
-                <div class="col-lg-5 col-md-12">
+                <div class="col-lg-6 col-md-12">
                     <a class="footer-brand mb-3" href="/">
                         <i class="bi bi-lightning-charge-fill" style="color: #0ea5e9;"></i> EventPulse
                     </a>
@@ -417,38 +448,8 @@
                     </div>
                 </div>
 
-                <!-- Kolom Navigasi Cepat -->
-                <div class="col-lg-3 col-md-6 ps-lg-5">
-                    <h5 class="footer-title">Navigasi Cepat</h5>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-                        <!-- Halaman Beranda -->
-                        @if(session('role') === 'admin')
-                            <a href="/admin/home" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
-                        @elseif(session('role') === 'penyelenggara')
-                            <a href="/penyelenggara/home" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
-                        @else
-                            <a href="/" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
-                        @endif
-                        
-                        <!-- Panel Pengguna -->
-                        @if(session('id'))
-                            @if(session('role') === 'admin')
-                                <a href="/admin/dashboard" class="footer-nav-btn"><i class="bi bi-speedometer2"></i> Dashboard</a>
-                            @elseif(session('role') === 'penyelenggara')
-                                <a href="/penyelenggara/dashboard" class="footer-nav-btn"><i class="bi bi-grid-1x2-fill"></i> Panel</a>
-                            @else
-                                <a href="/dashboard" class="footer-nav-btn"><i class="bi bi-person-fill-gear"></i> Dashboard</a>
-                            @endif
-                            <a href="/events" class="footer-nav-btn"><i class="bi bi-calendar2-event-fill"></i> Event</a>
-                        @else
-                            <a href="/login" class="footer-nav-btn"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
-                            <a href="/register" class="footer-nav-btn"><i class="bi bi-person-plus-fill"></i> Daftar</a>
-                        @endif
-                    </div>
-                </div>
-
                 <!-- Kolom Kontak Kami -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <h5 class="footer-title">Kontak Kami</h5>
                     
                     <!-- Informasi Alamat -->
@@ -482,6 +483,34 @@
                 <div class="footer-copyright">
                     Copyright &copy; 2026 <strong>EVENTPULSE</strong>. All rights reserved.
                 </div>
+
+                <!-- Navigasi Cepat di Baris Bawah -->
+                <nav class="footer-nav-bottom">
+                    @if(session('role') === 'admin')
+                        <a href="/admin/home">Beranda</a>
+                        <span class="sep">·</span>
+                        <a href="/admin/dashboard">Dashboard</a>
+                        <span class="sep">·</span>
+                        <a href="/events">Kelola Event</a>
+                    @elseif(session('role') === 'penyelenggara')
+                        <a href="/penyelenggara/home">Beranda</a>
+                        <span class="sep">·</span>
+                        <a href="/penyelenggara/dashboard">Panel</a>
+                        <span class="sep">·</span>
+                        <a href="/events">Kelola Event</a>
+                    @elseif(session('id'))
+                        <a href="/">Beranda</a>
+                        <span class="sep">·</span>
+                        <a href="/dashboard">Dashboard</a>
+                    @else
+                        <a href="/">Beranda</a>
+                        <span class="sep">·</span>
+                        <a href="/login">Masuk</a>
+                        <span class="sep">·</span>
+                        <a href="/register">Daftar</a>
+                    @endif
+                </nav>
+
                 <div class="footer-credits">
                     Tugas Besar Pemrograman Web 2026 oleh <strong>Kelompok 4</strong><br>
                     Teknik Informatika, Universitas Mataram
