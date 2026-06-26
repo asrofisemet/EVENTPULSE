@@ -3,9 +3,7 @@
 @section('content')
 
 <style>
-    /* ==========================
-       HERO SECTION
-    ========================== */
+    /* HERO SECTION */
     .hero-section {
         background: linear-gradient(
             135deg,
@@ -74,9 +72,7 @@
         color: rgba(255, 255, 255, 0.9);
     }
 
-    /* ==========================
-       EVENT SECTION
-    ========================== */
+    /* EVENT SECTION */
     .event-card {
         overflow: hidden;
         border: 1px solid rgba(14, 165, 233, 0.1) !important;
@@ -196,9 +192,7 @@
         color: #94a3b8;
     }
 
-    /* ==========================
-       RESPONSIVE
-    ========================== */
+    /* RESPONSIVE */
     @media(max-width:768px) {
         .hero-title {
             font-size: 2.3rem;

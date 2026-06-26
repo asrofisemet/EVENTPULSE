@@ -109,9 +109,7 @@
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
-        /* ==========================================
-           GAYA FOOTER UTAMA
-           ========================================== */
+        /* GAYA FOOTER UTAMA */
         footer {
             background: #ffffff !important;
             border-top: 1px solid rgba(14, 165, 233, 0.15) !important;
@@ -168,19 +166,18 @@
         .footer-nav-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 16px;
-            margin-bottom: 8px;
-            border-radius: 12px;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
             background: rgba(14, 165, 233, 0.04);
             border: 1px solid rgba(14, 165, 233, 0.08);
             color: #64748b !important;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            width: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
         }
 
         .footer-nav-btn:hover {
@@ -313,10 +310,17 @@
             color: #64748b;
         }
         
+        .footer-credits {
+            text-align: right;
+        }
+        
         @media (max-width: 768px) {
             .footer-bottom {
                 flex-direction: column;
                 gap: 10px;
+                text-align: center;
+            }
+            .footer-credits {
                 text-align: center;
             }
         }
@@ -380,12 +384,12 @@
         <div class="container">
             <div class="row g-4">
                 <!-- Kolom Informasi Brand -->
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-5 col-md-12">
                     <a class="footer-brand mb-3" href="/">
                         <i class="bi bi-lightning-charge-fill" style="color: #0ea5e9;"></i> EventPulse
                     </a>
-                    <p class="mt-2 text-muted" style="font-size: 0.95rem; line-height: 1.6;">
-                        Platform ekosistem booking event modern untuk seminar, konser, workshop, dan berbagai acara akademik maupun hiburan di Universitas Mataram.
+                    <p class="mt-2 text-muted" style="font-size: 0.95rem; line-height: 1.6; font-style: italic;">
+                        &ldquo;Detak Event Kampusmu dalam Satu Sentuhan. Menghubungkan Inspirasi, Menghidupkan Kolaborasi.&rdquo;
                     </p>
                     
                     <!-- Media Sosial Dan Kontak -->
@@ -414,9 +418,9 @@
                 </div>
 
                 <!-- Kolom Navigasi Cepat -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6 ps-lg-5">
                     <h5 class="footer-title">Navigasi Cepat</h5>
-                    <div class="mt-3">
+                    <div class="d-flex flex-wrap gap-2 mt-3">
                         <!-- Halaman Beranda -->
                         @if(session('role') === 'admin')
                             <a href="/admin/home" class="footer-nav-btn"><i class="bi bi-house-door-fill"></i> Beranda</a>
@@ -429,16 +433,16 @@
                         <!-- Panel Pengguna -->
                         @if(session('id'))
                             @if(session('role') === 'admin')
-                                <a href="/admin/dashboard" class="footer-nav-btn"><i class="bi bi-speedometer2"></i> Admin Dashboard</a>
+                                <a href="/admin/dashboard" class="footer-nav-btn"><i class="bi bi-speedometer2"></i> Dashboard</a>
                             @elseif(session('role') === 'penyelenggara')
-                                <a href="/penyelenggara/dashboard" class="footer-nav-btn"><i class="bi bi-grid-1x2-fill"></i> Panel Penyelenggara</a>
+                                <a href="/penyelenggara/dashboard" class="footer-nav-btn"><i class="bi bi-grid-1x2-fill"></i> Panel</a>
                             @else
-                                <a href="/dashboard" class="footer-nav-btn"><i class="bi bi-person-fill-gear"></i> Dashboard Saya</a>
+                                <a href="/dashboard" class="footer-nav-btn"><i class="bi bi-person-fill-gear"></i> Dashboard</a>
                             @endif
-                            <a href="/events" class="footer-nav-btn"><i class="bi bi-calendar2-event-fill"></i> Kelola Event</a>
+                            <a href="/events" class="footer-nav-btn"><i class="bi bi-calendar2-event-fill"></i> Event</a>
                         @else
                             <a href="/login" class="footer-nav-btn"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
-                            <a href="/register" class="footer-nav-btn"><i class="bi bi-person-plus-fill"></i> Daftar Akun</a>
+                            <a href="/register" class="footer-nav-btn"><i class="bi bi-person-plus-fill"></i> Daftar</a>
                         @endif
                     </div>
                 </div>
@@ -476,10 +480,11 @@
             <!-- Hak Cipta Dan Kredit Kelompok -->
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    &copy; 2026 <strong>EVENTPULSE</strong>. Hak Cipta Dilindungi.
+                    Copyright &copy; 2026 <strong>EVENTPULSE</strong>. All rights reserved.
                 </div>
                 <div class="footer-credits">
-                    Dikembangkan untuk Tugas Akhir oleh <strong>Kelompok 4</strong> &bull; Teknik Informatika, Universitas Mataram
+                    Tugas Besar Pemrograman Web 2026 oleh <strong>Kelompok 4</strong><br>
+                    Teknik Informatika, Universitas Mataram
                 </div>
             </div>
         </div>

@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    // ========== KELOLA USER ==========
-
+    // KELOLA USER
     public function userIndex()
     {
         $users = DB::table('users')->orderBy('created_at', 'desc')->get();
@@ -99,7 +98,7 @@ class AdminController extends Controller
         return redirect('/admin/users')->with('success', 'User berhasil dihapus!');
     }
 
-    // ========== KELOLA KATEGORI ==========
+    // KELOLA KATEGORI
 
     public function categoryIndex()
     {
@@ -142,7 +141,7 @@ class AdminController extends Controller
 
     public function categoryDestroy($id)
     {
-        // Check if category is used by events
+        // Cek Penggunaan Kategori
         $eventCount = DB::table('events')->where('category_id', $id)->count();
         if ($eventCount > 0) {
             return back()->with('error', "Kategori tidak bisa dihapus karena masih digunakan oleh {$eventCount} event.");
@@ -152,7 +151,7 @@ class AdminController extends Controller
         return redirect('/admin/categories')->with('success', 'Kategori berhasil dihapus!');
     }
 
-    // ========== VERIFIKASI EVENT ==========
+    // VERIFIKASI EVENT
 
     public function verifyIndex()
     {
@@ -194,11 +193,11 @@ class AdminController extends Controller
         return redirect('/admin/verify')->with('success', 'Event ditolak.');
     }
 
-    // ========== LAPORAN ==========
+    // LAPORAN
 
     public function laporan()
     {
-        // Summary stats
+        // Summary Stats
         $totalUsers       = DB::table('users')->count();
         $totalMahasiswa   = DB::table('users')->where('role', 'mahasiswa')->count();
         $totalPenyelenggara = DB::table('users')->where('role', 'penyelenggara')->count();
@@ -207,7 +206,7 @@ class AdminController extends Controller
         $totalPending     = DB::table('events')->where('status', 'pending')->count();
         $totalRegistrations = DB::table('registrations')->count();
 
-        // Registrations per event (top 10)
+        // Registrations Per Event
         $regPerEvent = DB::table('registrations')
             ->join('events', 'registrations.event_id', '=', 'events.id')
             ->select('events.judul', DB::raw('COUNT(registrations.id) as total'))
