@@ -356,7 +356,7 @@
         </a>
         @foreach($categories as $cat)
             <a href="{{ $homeBase }}?category={{ $cat->id }}" class="btn btn-sm {{ request('category') == $cat->id ? 'btn-primary-gradient text-white font-weight-bold' : 'btn-outline-secondary' }} px-4 py-2 rounded-pill shadow-sm">
-                <i class="bi {{ $cat->icon }}"></i> {{ $cat->nama }}
+                <i class="bi {{ $cat->icon ?? 'bi-tag' }}"></i> {{ $cat->nama }}
             </a>
         @endforeach
     </div>

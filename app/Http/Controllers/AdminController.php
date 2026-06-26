@@ -111,10 +111,12 @@ class AdminController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:100',
+            'icon' => 'nullable|string|max:50',
         ]);
 
         DB::table('categories')->insert([
             'nama'       => $request->nama,
+            'icon'       => $request->icon ?? 'bi-tag',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -126,10 +128,12 @@ class AdminController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:100',
+            'icon' => 'nullable|string|max:50',
         ]);
 
         DB::table('categories')->where('id', $id)->update([
             'nama'       => $request->nama,
+            'icon'       => $request->icon ?? 'bi-tag',
             'updated_at' => now(),
         ]);
 

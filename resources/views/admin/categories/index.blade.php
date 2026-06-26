@@ -32,7 +32,7 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>
-                            <span class="fw-semibold text-dark">{{ $category->nama }}</span>
+                            <i class="bi {{ $category->icon ?? 'bi-tag' }} me-2 text-primary"></i> <span class="fw-semibold text-dark">{{ $category->nama }}</span>
                         </td>
                         <td>
                             @php
@@ -45,7 +45,7 @@
                         <td><span style="color: #64748b;">{{ \Carbon\Carbon::parse($category->created_at)->format('d M Y') }}</span></td>
                         <td>
                             <div class="d-flex gap-1">
-                                <button type="button" class="btn btn-sm btn-edit" style="background: rgba(14,165,233,0.1); color: #0284c7; border: 1px solid rgba(14,165,233,0.2);" onclick="editCategory({{ $category->id }}, '{{ addslashes($category->nama) }}')">
+                                <button type="button" class="btn btn-sm btn-edit" style="background: rgba(14,165,233,0.1); color: #0284c7; border: 1px solid rgba(14,165,233,0.2);" onclick="editCategory({{ $category->id }}, '{{ addslashes($category->nama) }}', '{{ $category->icon ?? '' }}')">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
                                 <form action="/admin/categories/{{ $category->id }}" method="POST" class="delete-form">
@@ -81,6 +81,11 @@
                         <label for="nama" class="form-label text-dark">Nama Kategori</label>
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Contoh: Seminar, Workshop, Lomba" required style="border-radius: 10px; border-color: #cbd5e1;">
                     </div>
+                    <div class="mb-3">
+                        <label for="icon" class="form-label text-dark">Icon (Bootstrap Icon Class)</label>
+                        <input type="text" class="form-control" id="icon" name="icon" placeholder="Contoh: bi-laptop, bi-music-note" style="border-radius: 10px; border-color: #cbd5e1;">
+                        <small class="text-muted">Biarkan kosong untuk default (bi-tag). Referensi: <a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap Icons</a></small>
+                    </div>
                 </div>
                 <div class="modal-footer border-top-0 pt-0">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" style="border-radius:10px;">Batal</button>
@@ -106,6 +111,11 @@
                     <div class="mb-3">
                         <label for="edit_nama" class="form-label text-dark">Nama Kategori</label>
                         <input type="text" class="form-control" id="edit_nama" name="nama" required style="border-radius: 10px; border-color: #cbd5e1;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit_icon" class="form-label text-dark">Icon (Bootstrap Icon Class)</label>
+                        <input type="text" class="form-control" id="edit_icon" name="icon" style="border-radius: 10px; border-color: #cbd5e1;">
+                        <small class="text-muted">Biarkan kosong untuk default (bi-tag).</small>
                     </div>
                 </div>
                 <div class="modal-footer border-top-0 pt-0">
@@ -171,9 +181,10 @@
         });
     });
 
-    function editCategory(id, nama) {
+    function editCategory(id, nama, icon) {
         $('#editCategoryForm').attr('action', '/admin/categories/' + id);
         $('#edit_nama').val(nama);
+        $('#edit_icon').val(icon);
         $('#editCategoryModal').modal('show');
     }
 </script>
